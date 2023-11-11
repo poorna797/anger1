@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Embers of Wrath</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+        
+
+In the bustling city of Tempest Hollow, where the streets hummed with the discordant rhythm of hurried lives, there lived a man named Daniel. His days were a cacophony of deadlines, traffic, and the constant jostle of the urban crowd. Daniel, a skilled architect, had built his career on the foundations of precision and order, but beneath the polished exterior, a simmering tempest of anger lay dormant.
+
+One day, the delicate balance of Daniel's life was disrupted by a series of unforeseen events. A project he had poured his heart into was abruptly canceled, and personal relationships began to fray at the edges. Frustration mounted like a gathering storm, and Daniel found himself entangled in the web of his own anger.
+
+As days turned into nights, Daniel's anger grew, fueling itself with grievances both real and imagined. The once meticulous architect became a tempest within his own world, his sharp words cutting through the warmth of friendships and leaving behind a trail of smoldering bridges.
+
+In the heart of Tempest Hollow, Daniel's anger reached its zenith. Frustrated and embittered, he lashed out at those closest to him, unable to contain the fiery embers of his wrath. The city that once seemed vibrant and full of opportunities now mirrored the turbulence within his own soul.
+
+Amidst the chaos, Daniel received a letter from an old friend—a mentor who had witnessed his rise in the architectural world. The letter, written with a wisdom that only time could impart, urged Daniel to confront the tempest within. It spoke of the destructive nature of unchecked anger and the importance of finding solace in the midst of life's storms.
+
+Taking a moment of introspection, Daniel realized the toll his anger had taken on his well-being and relationships. With a newfound determination, he embarked on a journey of self-discovery, seeking ways to quell the embers that had threatened to consume him.
+
+Through therapy, meditation, and sincere apologies, Daniel began the process of rebuilding what anger had torn asunder. As the embers of wrath slowly cooled, he found unexpected allies in the city he had once perceived as an adversary. Colleagues and friends, understanding the struggles he faced, offered support and understanding, helping Daniel to rebuild the bridges he had burned.
+
+In the end, Tempest Hollow became a symbol of transformation for Daniel. The city that mirrored the storm within him now reflected the resilience of a man who had weathered the tempest and emerged with a newfound sense of calm. Daniel's journey taught him that anger, if left unchecked, could burn bridges, but with self-awareness and a willingness to change, those embers could be extinguished, and a new foundation built from the ashes.
+
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
